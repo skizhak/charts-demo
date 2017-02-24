@@ -54,7 +54,7 @@ export default (env = defaultEnv) => {
     },
     devtool: 'source-map',
     output: {
-      path: absolute('/build'),
+      path: absolute('/dist'),
       filename: '[name].bundle.js'
     },
     module: {loaders},
