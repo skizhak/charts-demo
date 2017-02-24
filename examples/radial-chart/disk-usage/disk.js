@@ -2,7 +2,7 @@
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
 
-import 'coCharts'
+import {charts} from 'coCharts'
 import commons from 'commons'
 
 const formatter = commons.formatter
@@ -118,8 +118,8 @@ const diskClusterConfig = {
   }]
 }
 
-const diskStatusChart = new coCharts.charts.RadialChartView()
-const diskClusterChart = new coCharts.charts.RadialChartView()
+const diskStatusChart = new charts.RadialChartView()
+const diskClusterChart = new charts.RadialChartView()
 
 export default {
   container: container,

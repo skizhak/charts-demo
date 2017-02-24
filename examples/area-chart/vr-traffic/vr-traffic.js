@@ -3,7 +3,7 @@
  */
 
 import commons from 'commons'
-import 'coCharts'
+import {charts} from 'coCharts'
 
 const _ = commons._
 const formatter = commons.formatter
@@ -262,7 +262,7 @@ const chartConfig = {
 }
 
 // Create chart view.
-const trafficView = new coCharts.charts.XYChartView()
+const trafficView = new charts.XYChartView()
 
 export default {
   container: container,

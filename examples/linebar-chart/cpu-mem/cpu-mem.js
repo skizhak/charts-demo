@@ -2,7 +2,7 @@
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
 
-import 'coCharts'
+import {charts} from 'coCharts'
 import commons from 'commons'
 import dataSrc from './cpu-mem.json'
 
@@ -265,7 +265,7 @@ const chartConfig = {
 }
 
 // Create chart view.
-const cpuMemChartView = new coCharts.charts.XYChartView()
+const cpuMemChartView = new charts.XYChartView()
 
 export default {
   container: container,

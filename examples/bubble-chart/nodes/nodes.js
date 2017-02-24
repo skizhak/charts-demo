@@ -2,7 +2,7 @@
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
 
-import 'coCharts'
+import {charts} from 'coCharts'
 import commons from 'commons'
 
 const _ = commons._
@@ -290,7 +290,7 @@ const chartConfig = {
   }]
 }
 
-const chartView = new coCharts.charts.XYChartView()
+const chartView = new charts.XYChartView()
 
 export default {
   container: container,

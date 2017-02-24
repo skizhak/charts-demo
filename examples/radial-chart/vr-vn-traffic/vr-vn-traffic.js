@@ -2,7 +2,7 @@
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
 
-import 'coCharts'
+import {charts} from 'coCharts'
 import commons from 'commons'
 
 const _c = commons._c
@@ -85,7 +85,7 @@ const chartConfig = {
 }
 
 // Create chart view.
-const chartView = new coCharts.charts.RadialChartView()
+const chartView = new charts.RadialChartView()
 
 export default {
   container: container,

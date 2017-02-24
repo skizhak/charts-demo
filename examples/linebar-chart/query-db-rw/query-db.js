@@ -2,7 +2,7 @@
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
 
-import 'coCharts'
+import {charts} from 'coCharts'
 import commons from 'commons'
 
 const _ = commons._
@@ -206,7 +206,7 @@ const chartConfig = {
 }
 
 let intervalId = -1
-const queryChart = new coCharts.charts.XYChartView()
+const queryChart = new charts.XYChartView()
 
 export default {
   container: container,

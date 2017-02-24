@@ -2,7 +2,7 @@
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
 
-import 'coCharts'
+import {charts} from 'coCharts'
 import commons from 'commons'
 
 const _ = commons._
@@ -370,7 +370,7 @@ const chartConfig = {
   charts: chartConfigs,
 }
 
-const chartView = new coCharts.charts.MultiChartView()
+const chartView = new charts.MultiChartView()
 
 export default {
   groupedChartsWrapper: groupedChartsWrapper,
