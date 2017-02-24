@@ -80,7 +80,7 @@ export default (env = defaultEnv) => {
     devServer: {
       publicPath: '/dist/',
       compress: true,
-      port: 9000
+      port: 9001
     }
   }
 }
