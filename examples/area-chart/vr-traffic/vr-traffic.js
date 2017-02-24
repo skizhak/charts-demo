@@ -1,13 +1,9 @@
 /*
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
-
-import commons from 'commons'
+import _ from 'lodash'
 import {charts} from 'coCharts'
-
-const _ = commons._
-const formatter = commons.formatter
-const _c = commons._c
+import {formatter, _c} from 'commons'
 const lbColorScheme7 = _c.d3ColorScheme20
 
 function dataProcesser (rawData) {
@@ -33,7 +29,6 @@ function dataProcesser (rawData) {
     nodeIds: _.uniq(_.map(rawData, 'vrouter'))
   }
 }
-
 /**
  * Try to use the given colorSchema to assign a color to each attribute of each node
  *
@@ -225,26 +220,6 @@ const chartConfig = {
     config: {
       title: 'Usage Details',
       dataConfig: tooltipDataConfig
-    }
-  }, {
-    id: 'vr-traffic-controlpanel',
-    type: 'ControlPanel',
-    config: {
-      enabled: true,
-      buttons: [
-        {
-          name: 'filter',
-          title: 'Filter',
-          iconClass: 'fa fa-filter',
-          events: {
-            click: 'filterVariables',
-          },
-          panel: {
-            name: 'accessorData',
-            width: '350px',
-          }
-        }
-      ]
     }
   }, {
     id: 'vrTrafficMessage',

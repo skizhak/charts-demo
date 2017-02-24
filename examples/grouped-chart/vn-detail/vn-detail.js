@@ -1,14 +1,11 @@
 /*
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
-
+import _ from 'lodash'
 import {charts} from 'coCharts'
-import commons from 'commons'
+import {_c, formatter, dg} from 'commons'
 
-const _ = commons._
-const formatter = commons.formatter
-const _c = commons._c
-const data = commons.dg.projectVNTraffic({vnCount: 4, flowCount: 50})
+const data = dg.projectVNTraffic({vnCount: 4, flowCount: 50})
 const colorScheme = _c.d3ColorScheme20
 const bubbleShapes = _c.bubbleShapes
 

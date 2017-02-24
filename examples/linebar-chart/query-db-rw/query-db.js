@@ -1,13 +1,9 @@
 /*
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
-
+import _ from 'lodash'
 import {charts} from 'coCharts'
-import commons from 'commons'
-
-const _ = commons._
-const formatter = commons.formatter
-const _c = commons._c
+import {formatter, _c} from 'commons'
 
 function getDataPoint (x) {
   const a = _.random(3, 100) * 100

@@ -1,13 +1,11 @@
 /*
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
-
 import {charts} from 'coCharts'
-import commons from 'commons'
+import {_c, dg} from 'commons'
 
-const _c = commons._c
 const dendrogamData = {
-  data: commons.dg.vRouterTraffic()
+  data: dg.vRouterTraffic()
 }
 const container = 'radial-dendrogram-chart'
 const layoutMeta = {
@@ -34,7 +32,7 @@ const chartConfig = {
       parentSeparation: 1.0,
       parentSeparationShrinkFactor: 0.05,
       parentSeparationDepthThreshold: 4,
-      colorScheme: _c.radialColorScheme10,
+      colorScale: d3.scaleOrdinal().range(_c.radialColorScheme10), // eslint-disable-line no-undef
       drawLinks: false,
       drawRibbons: true,
       arcWidth: 15,

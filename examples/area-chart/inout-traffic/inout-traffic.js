@@ -1,18 +1,14 @@
 /*
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
-
+import _ from 'lodash'
 import {charts} from 'coCharts'
-import commons from 'commons'
+import {formatter, _c} from 'commons'
 
-const _ = commons._
-const formatter = commons.formatter
-const _c = commons._c
 const timeInterval = 2000
-
 let now = _.now()
-let trafficData = []
-let vNetworksCount = 2
+const trafficData = []
+const vNetworksCount = 2
 
 for (let j = 0; j < vNetworksCount; j++) {
   let vnName = 'vnetwork' + (j + 1)
@@ -252,26 +248,6 @@ const chartConfig = {
     config: {
       title: 'Usage Details',
       dataConfig: tooltipDataConfig
-    }
-  }, {
-    id: 'inout-traffic-controlPanel',
-    type: 'ControlPanel',
-    config: {
-      enabled: true,
-      buttons: [
-        {
-          name: 'filter',
-          title: 'Filter',
-          iconClass: 'fa fa-filter',
-          events: {
-            click: 'filterVariables',
-          },
-          panel: {
-            name: 'accessorData',
-            width: '350px',
-          }
-        }
-      ]
     }
   }, {
     id: 'inout-traffic-message',

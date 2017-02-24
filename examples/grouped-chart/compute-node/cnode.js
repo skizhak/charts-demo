@@ -1,11 +1,10 @@
 /*
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
-
+import _ from 'lodash'
 import {charts} from 'coCharts'
-import commons from 'commons'
+const commons = require('commons')
 
-const _ = commons._
 const formatter = commons.formatter
 const _c = commons._c
 const timeInterval = 2000
@@ -554,7 +553,7 @@ const chartConfig = {
   type: 'MultiChart',
   charts: chartConfigs,
   components: [
-    //TODO: Fix the placement of control panel for multi-chart
+    // TODO: Fix the placement of control panel for multi-chart
     /*
     {
       id: 'control-panel-id',
