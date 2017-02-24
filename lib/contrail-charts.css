@@ -1,0 +1,684 @@
+.color-picker.cc-component {
+  position: relative; }
+  .color-picker.cc-component .color-select {
+    display: block;
+    width: 150px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    margin: 0 4px 4px 0; }
+    .color-picker.cc-component .color-select .label {
+      font-size: 14px;
+      font-weight: bold;
+      color: #fff; }
+  .color-picker.cc-component .color-select:hover {
+    cursor: pointer; }
+  .color-picker.cc-component .color-picker-palette {
+    display: none;
+    width: 300px;
+    border: 1px solid #ddd;
+    position: absolute; }
+    .color-picker.cc-component .color-picker-palette .color-picker-palette-header {
+      padding: 5px 10px 5px 10px;
+      background-color: #ddd; }
+      .color-picker.cc-component .color-picker-palette .color-picker-palette-header .color-picker-palette-title {
+        font-weight: bold; }
+      .color-picker.cc-component .color-picker-palette .color-picker-palette-header .color-picker-palette-close {
+        float: right;
+        cursor: pointer; }
+    .color-picker.cc-component .color-picker-palette .color-picker-palette-body {
+      padding: 10px;
+      background-color: #fff; }
+      .color-picker.cc-component .color-picker-palette .color-picker-palette-body .color-picker-palette-color {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        margin: 1px;
+        cursor: pointer; }
+.cc-svg .axis .domain {
+  display: none; }
+
+.cc-svg .axis .tick line {
+  stroke: #eee; }
+
+.cc-svg .axis .tick text {
+  font-size: 11px;
+  fill: #757575; }
+
+.cc-svg .axis .axis-label {
+  font-size: 11px;
+  fill: #676767;
+  text-anchor: middle; }
+.cc-svg .line-chart .line {
+  fill: none;
+  stroke-width: 2;
+  opacity: 0.8; }
+.cc-svg .area-chart .area {
+  opacity: 0.7; }
+.cc-svg .bar-chart .bar, .stacked-bar-chart .bar {
+  opacity: 0.6; }
+
+.cc-svg .bar-chart .bar.active, .stacked-bar-chart .bar.active {
+  opacity: 0.9; }
+.cc-svg .scatter-plot .point {
+  opacity: 0.7;
+  shape-rendering: geometricPrecision;
+  font-family: FontAwesome;
+  alignment-baseline: middle;
+  text-anchor: middle; }
+  .cc-svg .scatter-plot .point:hover {
+    opacity: 0.9;
+    stroke-width: 1;
+    stroke: #ddd;
+    cursor: pointer;
+    shape-rendering: geometricPrecision; }
+.cc-title {
+  text-align: center;
+  font-size: 20px; }
+.control-panel.cc-component {
+  z-index: 5; }
+  .control-panel.cc-component .control-panel-items {
+    width: 32px;
+    float: right; }
+    .control-panel.cc-component .control-panel-items .control-panel-item {
+      position: relative;
+      margin: 0 0 5px 0; }
+      .control-panel.cc-component .control-panel-items .control-panel-item button {
+        width: 100%;
+        font-size: 14px;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #ddd;
+        color: #444;
+        transition: background-color .25s; }
+        .control-panel.cc-component .control-panel-items .control-panel-item button:hover {
+          background-color: #ddd; }
+      .control-panel.cc-component .control-panel-items .control-panel-item .opener {
+        position: absolute;
+        display: block;
+        left: 2px;
+        bottom: 2px;
+        width: 0;
+        height: 0;
+        border-bottom: 5px solid #aaa;
+        border-right: 5px solid transparent; }
+  .control-panel.cc-component .panel {
+    width: 350px;
+    margin: 0 33px 0 0;
+    border: 1px solid #ddd;
+    background-color: #fff; }
+    .control-panel.cc-component .panel .head {
+      padding: 5px 10px 5px 10px;
+      background-color: #ddd;
+      color: #444;
+      font-size: 14px; }
+      .control-panel.cc-component .panel .head .head-icon {
+        margin-right: 10px; }
+      .control-panel.cc-component .panel .head .close {
+        float: right;
+        cursor: pointer; }
+    .control-panel.cc-component .panel .body {
+      padding: 10px;
+      color: #444;
+      font-size: 14px; }
+.cc-svg .crosshair .crosshair-line .x-line {
+  stroke-width: 1;
+  stroke: #888;
+  shape-rendering: crispEdges; }
+
+.cc-svg .crosshair .crosshair-line .x-text {
+  text-anchor: middle;
+  font-size: 11px;
+  font-weight: bold;
+  fill: #888; }
+
+.cc-svg .crosshair .crosshair-line .bubble {
+  stroke-width: 1;
+  stroke: #fff; }
+.filter-item.cc-component .accessor-data-checkbox {
+  cursor: pointer; }
+
+.filter-item.cc-component .accessor-data-checkbox-label {
+  cursor: pointer; }
+
+.filter-item.cc-component .accessor-data-chart-type-select {
+  float: right; }
+.legend.cc-component .legend-group {
+  display: inline-block;
+  padding: 10px; }
+  .legend.cc-component .legend-group .color {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+    margin-right: 10px; }
+  .legend.cc-component .legend-group .label {
+    font-size: 12px; }
+.legend-panel.cc-component {
+  z-index: 5;
+  font-family: sans-serif;
+  font-size: 12px;
+  color: #707070;
+  border: 1px solid #fafafa;
+  border-radius: 4px;
+  padding: 0 10px;
+  overflow: hidden; }
+  .legend-panel.cc-component * {
+    box-sizing: content-box; }
+  .legend-panel.cc-component.vertical .edit-legend {
+    vertical-align: bottom;
+    margin-bottom: 4px; }
+  .legend-panel.cc-component.vertical .attribute {
+    display: block; }
+    .legend-panel.cc-component.vertical .attribute:not(:last-child) {
+      margin-bottom: 4px; }
+  .legend-panel.cc-component .legend-inner-container {
+    white-space: nowrap;
+    overflow-x: auto; }
+  .legend-panel.cc-component .attributes {
+    display: inline-block;
+    line-height: 12px;
+    vertical-align: middle; }
+  .legend-panel.cc-component .edit-legend {
+    display: inline-block;
+    border-right: 1px solid #fafafa;
+    padding-right: 8px;
+    font-size: 18px;
+    vertical-align: middle;
+    color: #9e9e9e; }
+    .legend-panel.cc-component .edit-legend:hover {
+      cursor: pointer; }
+  .legend-panel.cc-component:hover, .legend-panel.cc-component.edit-mode {
+    border: 1px solid #f1f1f1;
+    border-right-color: #f1f1f1; }
+    .legend-panel.cc-component:hover .edit-legend, .legend-panel.cc-component.edit-mode .edit-legend {
+      color: #5e5e5e; }
+
+.attribute {
+  display: inline-block;
+  border: 1px solid #fff;
+  padding: 2px 4px;
+  margin-right: 4px; }
+  .attribute:first-child {
+    padding-left: 0; }
+  .attribute:last-child {
+    margin-right: 0; }
+  .attribute .edit-attribute {
+    display: none; }
+  .attribute.edit {
+    border: 1px solid #fafafa;
+    border-radius: 2px; }
+    .attribute.edit .edit-attribute {
+      display: inline-block; }
+    .attribute.edit .legend-attribute {
+      padding-top: 10px;
+      padding-left: 0; }
+    .attribute.edit .indicator {
+      display: none; }
+
+.legend-attribute {
+  display: inline-block;
+  padding: 3px 0;
+  position: relative;
+  padding-top: 10px;
+  vertical-align: middle; }
+  .legend-attribute input[type=checkbox] {
+    display: none; }
+  .legend-attribute .axis {
+    display: none;
+    text-transform: uppercase;
+    color: #ccc;
+    border: 1px solid #eee;
+    padding: 1px;
+    border-radius: 4px;
+    font-size: 10px;
+    margin-right: 2px; }
+    .legend-attribute .axis.active {
+      display: inline; }
+  .legend-attribute.disabled:hover {
+    cursor: default; }
+  .legend-attribute:hover {
+    cursor: pointer; }
+
+.indicator {
+  font-size: 14px; }
+  .indicator.radio {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    vertical-align: middle;
+    border-radius: 100px;
+    background-color: white;
+    border: 1px solid black; }
+    .legend-attribute input:checked ~ .indicator.radio {
+      background-color: black; }
+    .indicator.radio:after {
+      position: absolute;
+      display: none;
+      content: ''; }
+      .legend-attribute input:checked ~ .indicator.radio:after {
+        display: block; }
+      .legend-attribute.disabled input:checked ~ .indicator.radio:after {
+        display: none; }
+      .legend-attribute .indicator.radio:after {
+        width: 8px;
+        height: 8px;
+        border: solid white;
+        border-width: 1px 1px 1px 1px;
+        border-radius: 100px; }
+
+.select {
+  position: relative;
+  display: inline-block;
+  height: 15px;
+  line-height: 15px;
+  width: 24px;
+  border-radius: 2px;
+  vertical-align: middle; }
+  .select.select--chart {
+    font-size: 13px;
+    padding: 0 2px;
+    background-color: #5e5e5e;
+    border-color: #5e5e5e;
+    color: white;
+    width: 24px; }
+  .select:hover {
+    cursor: pointer;
+    border-color: #333 !important; }
+  .select .triangle {
+    position: absolute;
+    display: block;
+    right: 3px;
+    top: 8px;
+    width: 0;
+    height: 0;
+    border-bottom: 5px solid #fff;
+    border-left: 5px solid transparent; }
+
+.selector {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  max-width: 140px;
+  padding: 5px; }
+  .selector div[class*="swatches--"] {
+    display: none; }
+  .selector.active {
+    display: block; }
+  .selector.select--color .swatches--colors {
+    display: block; }
+  .selector.select--chart .swatches--charts {
+    display: block; }
+  .selector .swatch {
+    position: relative;
+    z-index: 1;
+    box-sizing: border-box;
+    float: left;
+    margin: 2px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: white; }
+    .selector .swatch:hover {
+      cursor: pointer;
+      transform: scale(1.1, 1.1);
+      transform-origin: center; }
+    .selector .swatch.selected:after {
+      content: " ";
+      position: absolute;
+      z-index: -1;
+      top: -1px;
+      left: -1px;
+      right: -1px;
+      bottom: -1px;
+      border: 2px solid black;
+      border-radius: 4px; }
+  .selector .swatch--chart {
+    display: none;
+    padding: 4px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 16px; }
+    .selector .swatch--chart.show {
+      display: inline-block; }
+.message.cc-component {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .message.cc-component .message-row {
+    overflow: hidden;
+    font-size: 0.75rem; }
+    .message.cc-component .message-row.msg-info {
+      color: #00529B;
+      background-color: #BDE5F8; }
+    .message.cc-component .message-row.msg-error {
+      color: #D8000C;
+      background-color: #FFBABA; }
+    .message.cc-component .message-row.msg-warn {
+      color: #9F6000;
+      background-color: #FEEFB3; }
+    .message.cc-component .message-row .message-heading,
+    .message.cc-component .message-row .message-body {
+      width: 100%;
+      padding: 0 5px;
+      margin: 5px 0; }
+    .message.cc-component .message-row .message-heading {
+      display: flex;
+      position: relative; }
+      .message.cc-component .message-row .message-heading .fa {
+        margin-right: 2px; }
+      .message.cc-component .message-row .message-heading .message-title {
+        flex-grow: 1;
+        font-weight: bold; }
+.cc-svg .brush .selection {
+  fill: #aaa; }
+
+.cc-svg .brush .handle--custom {
+  opacity: 1;
+  fill: #888;
+  fill-opacity: 0.75;
+  stroke: #444;
+  stroke-width: 1;
+  cursor: ew-resize; }
+  .cc-svg .brush .handle--custom.hide {
+    opacity: -5e; }
+.cc-svg .pie-chart {
+  opacity: 0.9; }
+  .cc-svg .pie-chart path.arc {
+    stroke: white; }
+  .cc-svg .pie-chart path.active {
+    opacity: 0.45; }
+.cc-svg .radial-dendrogram .link {
+  stroke: #2196f3;
+  stroke-opacity: .2;
+  fill: none;
+  pointer-events: none; }
+
+.cc-svg .radial-dendrogram .ribbon {
+  fill: #1f77b4;
+  fill-opacity: 0.2;
+  stroke-width: 0px; }
+
+.cc-svg .radial-dendrogram .ribbon:hover {
+  fill: #ff6f00;
+  fill-opacity: 0.4;
+  cursor: pointer; }
+
+.cc-svg .radial-dendrogram .ribbon.active {
+  fill: #ff6f00;
+  fill-opacity: 0.7; }
+
+.cc-svg .radial-dendrogram .arc {
+  fill: #1f77b4;
+  fill-opacity: 0.7;
+  stroke-width: 1px;
+  stroke: #103d5d;
+  stroke-opacity: 0.7; }
+
+.cc-svg .radial-dendrogram .arc:hover {
+  fill-opacity: 1;
+  cursor: pointer; }
+
+.cc-svg .radial-dendrogram .arc-label {
+  text-anchor: start;
+  alignment-baseline: middle;
+  font-size: 9px;
+  fill: #000000; }
+
+.cc-svg .radial-dendrogram .circle {
+  stroke: #424242;
+  stroke-opacity: .4;
+  stroke-width: 1px;
+  fill: none;
+  pointer-events: none; }
+.cc-svg .timeline-bar {
+  fill: #aaa;
+  opacity: 0.75; }
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*------------------------------------*    $CONTENTS
+\*------------------------------------*/
+/**
+ * STYLE GUIDE VARIABLES------------------Declarations of Sass variables
+ * -----Typography
+ * -----Colors
+ * -----Textfield
+ * -----Switch
+ * -----Spinner
+ * -----Radio
+ * -----Menu
+ * -----List
+ * -----Layout
+ * -----Icon toggles
+ * -----Footer
+ * -----Column
+ * -----Checkbox
+ * -----Card
+ * -----Button
+ * -----Animation
+ * -----Progress
+ * -----Badge
+ * -----Shadows
+ * -----Grid
+ * -----Data table
+ * -----Dialog
+ * -----Snackbar
+ * -----Tooltip
+ * -----Chip
+ *
+ * Even though all variables have the `!default` directive, most of them
+ * should not be changed as they are dependent one another. This can cause
+ * visual distortions (like alignment issues) that are hard to track down
+ * and fix.
+ */
+/* ==========  TYPOGRAPHY  ========== */
+/* We're splitting fonts into "preferred" and "performance" in order to optimize
+   page loading. For important text, such as the body, we want it to load
+   immediately and not wait for the web font load, whereas for other sections,
+   such as headers and titles, we're OK with things taking a bit longer to load.
+   We do have some optional classes and parameters in the mixins, in case you
+   definitely want to make sure you're using the preferred font and don't mind
+   the performance hit.
+   We should be able to improve on this once CSS Font Loading L3 becomes more
+   widely available.
+*/
+/* ==========  COLORS  ========== */
+/**
+*
+* Material design color palettes.
+* @see http://www.google.com/design/spec/style/color.html
+*
+**/
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/* ==========  Color Palettes  ========== */
+/* colors.scss */
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/* ==========  IMAGES  ========== */
+/* ==========  Color & Themes  ========== */
+/* ==========  Typography  ========== */
+/* ==========  Components  ========== */
+/* ==========  Standard Buttons  ========== */
+/* ==========  Icon Toggles  ========== */
+/* ==========  Radio Buttons  ========== */
+/* ==========  Ripple effect  ========== */
+/* ==========  Layout  ========== */
+/* ==========  Content Tabs  ========== */
+/* ==========  Checkboxes  ========== */
+/* ==========  Switches  ========== */
+/* ==========  Spinner  ========== */
+/* ==========  Text fields  ========== */
+/* ==========  Card  ========== */
+/* ==========  Sliders ========== */
+/* ========== Progress ========== */
+/* ==========  List ========== */
+/* ==========  Item ========== */
+/* ==========  Dropdown menu ========== */
+/* ==========  Tooltips  ========== */
+/* ==========  Footer  ========== */
+/* TEXTFIELD */
+/* SWITCH */
+/* SPINNER */
+/* RADIO */
+/* MENU */
+/* LIST */
+/* LAYOUT */
+/* ICON TOGGLE */
+/* FOOTER */
+/*mega-footer*/
+/*mini-footer*/
+/* CHECKBOX */
+/* CARD */
+/* Card dimensions */
+/* Cover image */
+/* BUTTON */
+/**
+ *
+ * Dimensions
+ *
+ */
+/* ANIMATION */
+/* PROGRESS */
+/* BADGE */
+/* SHADOWS */
+/* GRID */
+/* DATA TABLE */
+/* DIALOG */
+/* SNACKBAR */
+/* TOOLTIP */
+/* CHIP */
+.tooltip.cc-component {
+  position: absolute;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
+  transition: visibility, opacity;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+  .tooltip.cc-component.active {
+    height: auto;
+    visibility: visible;
+    opacity: 1; }
+  .tooltip.cc-component .tooltip-content {
+    padding: 10px 10px 5px;
+    border-radius: 4px;
+    background-color: black;
+    font-size: 12px;
+    color: white;
+    min-width: 200px;
+    opacity: 0.75; }
+    .tooltip.cc-component .tooltip-content .cc-title {
+      font-weight: bold;
+      font-size: 14px;
+      padding: 0 0 7px 0;
+      border-bottom: 1px solid #ddd;
+      margin-bottom: 15px;
+      text-align: left; }
+  .tooltip.cc-component .tooltip-item {
+    font-size: 12px;
+    border-bottom: 1px solid #f8f8f8;
+    margin-bottom: 5px;
+    padding-bottom: 5px; }
+    .tooltip.cc-component .tooltip-item:last-child {
+      border-bottom: 0;
+      margin-bottom: 0; }
+    .tooltip.cc-component .tooltip-item .tooltip-item-color {
+      width: 5px;
+      height: 9px;
+      display: inline-block;
+      border-radius: 2px;
+      background-color: black; }
+    .tooltip.cc-component .tooltip-item .tooltip-item-label {
+      margin-right: 15px; }
+    .tooltip.cc-component .tooltip-item .tooltip-item-value {
+      font-weight: 900;
+      float: right; }
+* {
+  box-sizing: border-box; }
+
+.hide {
+  display: none; }
+
+.cc-chart {
+  position: relative; }
+
+.cc-svg {
+  user-select: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+* {
+  font-family: sans-serif; }
+
+button {
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none; }
+
+button:focus {
+  outline: none; }
+
+.button {
+  background-color: #fff;
+  border: 1px solid #aaa;
+  padding: 2px 6px;
+  border-radius: 2px; }
+  .button:hover {
+    cursor: pointer; }
+
+/*# sourceMappingURL=contrail-charts.css.map*/
