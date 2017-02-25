@@ -1,12 +1,9 @@
 /*
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
-
 import {charts} from 'coCharts'
-import commons from 'commons'
+import {formatter, _c} from 'commons'
 
-const formatter = commons.formatter
-const _c = commons._c
 const radialColorScheme6 = _c.radialColorScheme6
 
 const osdStatusData = [

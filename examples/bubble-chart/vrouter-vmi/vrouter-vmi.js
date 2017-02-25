@@ -1,13 +1,10 @@
 /*
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
-
+import _ from 'lodash'
 import {charts} from 'coCharts'
-import commons from 'commons'
+import {formatter, _c} from 'commons'
 
-const _ = commons._
-const formatter = commons.formatter
-const _c = commons._c
 const bubbleShapes = _c.bubbleShapes
 const colorScheme = _c.bubbleColorScheme6
 
@@ -196,4 +193,3 @@ export default {
     chartView.remove()
   }
 }
-
