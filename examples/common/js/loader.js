@@ -52,6 +52,18 @@ const allExamples = {
         chartTitle: 'vRouter CPU vs Memory',
         chartDesc: 'Line vs Grouped Bar chart is used to compare CPU and Memory of vRouters.'
       }
+    },
+    'RequireJS': {
+      view: {
+        type: 'RJS',
+        entryPoint: './examples/linebar-chart/requirejs/requirejs-config.js'
+      },
+      description: {
+        chartTitle: 'Using AMD loader',
+        chartDesc: `This example demonstrate usage of contrail-charts loaded via RequireJS. The example config also
+         shows the example of having multiple D3 version requirement in your app environment.
+         Chart library require D3 version 4 exported via 'd3v4' and 'd3' export can point to older version of D3`
+      }
     }
   },
   'bubble': {
@@ -157,41 +169,63 @@ _.forEach(allExamples, (examples, chartCategory) => {
   })
 })
 
+function _viewRenderInit (templateId, view, description) {
+  let containerIds = _.isArray(view.container) ? view.container : [view.container]
+  let currentView = $chartBox.data('chartView')
+  if (currentView) {
+    currentView.remove()
+    if (currentView.stopUpdating) {
+      currentView.stopUpdating()
+    }
+  }
+  // Cleanup and apply template.
+  $exampleDesc.empty()
+  $chartBox.empty()
+  $chartBox.data('chartView', view)
+  $chartBox.append(templates[templateId]({
+    groupedChartsWrapperId: view.groupedChartsWrapper,
+    containerIds: containerIds,
+    layoutMeta: view.layoutMeta
+  }))
+  // Add example description
+  if (!_.isNil(description)) {
+    $exampleDesc.append(exampleDescTemplate({
+      chartTitle: description.chartTitle,
+      chartDesc: description.chartDesc
+    }))
+  }
+  // Render it
+  view.render()
+}
+
 function createLink (chartType = '', templateId = 'grouped', view = {}, linkText = 'linkText', exampleDesc) {
+  const RJSInitFlag = 'RJSInstantiated'
   let cleaned = encodeURIComponent(linkText.replace(/\s/g, ''))
   let $link = $(`<a id="${chartType}${cleaned}" href="#${chartType}${cleaned}"><span class="nav-text">${linkText}</span></a>`)
-
-  $link.click((e) => {
-    let containerIds = _.isArray(view.container) ? view.container : [view.container]
-    let currentView = $chartBox.data('chartView')
-
-    if (currentView) {
-      currentView.remove()
-      if (currentView.stopUpdating) {
-        currentView.stopUpdating()
+  if (view.type === 'RJS') {
+    $link.click((e) => {
+      if (view.status && view.status === RJSInitFlag) {
+        _viewRenderInit(templateId, view.AMDChartView, exampleDesc)
+      } else {
+        // Load the entry point
+        let entryPoint = document.createElement('script')
+        entryPoint.src = 'node_modules/requirejs/require.js'
+        entryPoint.setAttribute('data-main', view.entryPoint)
+        document.body.append(entryPoint)
+        // Once the require entry point load is complete (not just the file load but all dependencies),
+        // the script callback will invoke render callback.
+        window.AMDRenderCB = (RJSChartView) => {
+          view.AMDChartView = RJSChartView
+          view.status = RJSInitFlag
+          _viewRenderInit(templateId, RJSChartView, exampleDesc)
+        }
       }
-    }
-
-    $exampleDesc.empty()
-    $chartBox.empty()
-    $chartBox.data('chartView', view)
-
-    if (!_.isNil(exampleDesc)) {
-      $exampleDesc.append(exampleDescTemplate({
-        chartTitle: exampleDesc.chartTitle,
-        chartDesc: exampleDesc.chartDesc
-      }))
-    }
-
-    $chartBox.append(templates[templateId]({
-      groupedChartsWrapperId: view.groupedChartsWrapper,
-      containerIds: containerIds,
-      layoutMeta: view.layoutMeta
-    }))
-
-    view.render()
-  })
-
+    })
+  } else {
+    $link.click((e) => {
+      _viewRenderInit(templateId, view, exampleDesc)
+    })
+  }
   return $link
 }
 
