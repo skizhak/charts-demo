@@ -50,7 +50,7 @@ export default (env = defaultEnv) => {
 
   return {
     entry: {
-      'example-loader': absolute('examples/common/js/example-loader')
+      'loader': absolute('examples/common/js/loader')
     },
     devtool: 'source-map',
     output: {
