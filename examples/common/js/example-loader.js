@@ -59,17 +59,17 @@ const allExamples = {
       view: nodeCPUMemChart,
       description: {
         chartTitle: 'CPU & Memory of Contrail Nodes',
-        chartDesc: `Bubble chart with navigation is used to analyze CPU and Memory of different nodes. Each node is 
-        identified by it\'s temporary icon. Users can filter the nodes by CPU Share through navigation chart at bottom.`
+        chartDesc: `Bubble chart with navigation is used to analyze CPU and Memory of different nodes. Each node is
+         identified by it\'s temporary icon. Users can filter the nodes by CPU Share through navigation chart at bottom.`
       }
     },
     'Port Distribution': {
       view: portDistributionChart,
       description: {
         chartTitle: 'VN Traffic In/Out across Ports',
-        chartDesc: `Top bubble charts displays the traffic in/out over a port range of a virtual network. Different, 
-        temporary icons are used to identify traffic in and traffic out. Users can filter the ports by traffic through 
-        navigation chart at bottom.`
+        chartDesc: `Top bubble charts displays the traffic in/out over a port range of a virtual network. Different,
+         temporary icons are used to identify traffic in and traffic out. Users can filter the ports by traffic through
+          navigation chart at bottom.`
       }
     },
     'vRouters': {
@@ -159,7 +159,7 @@ _.forEach(allExamples, (examples, chartCategory) => {
 
 function createLink (chartType = '', templateId = 'grouped', view = {}, linkText = 'linkText', exampleDesc) {
   let cleaned = encodeURIComponent(linkText.replace(/\s/g, ''))
-  let $link = $(`<a id="${chartType}${cleaned}" href="#${cleaned}"><span class="nav-text">${linkText}</span></a>`)
+  let $link = $(`<a id="${chartType}${cleaned}" href="#${chartType}${cleaned}"><span class="nav-text">${linkText}</span></a>`)
 
   $link.click((e) => {
     let containerIds = _.isArray(view.container) ? view.container : [view.container]
@@ -195,10 +195,5 @@ function createLink (chartType = '', templateId = 'grouped', view = {}, linkText
   return $link
 }
 
-const $1stNavMenu = $('.nav .nav-header + li').first()
-$1stNavMenu.children('a').find('.nav-text').click()
-$1stNavMenu.children('ul').find('a[id]').first().click()
-
-$('#developer-link').click(function () {
-  window.open('developer.html', '_self', false)
-})
+const exampleId = window.location.hash || '#groupedProjectVNTraffic'
+$(exampleId).click()
