@@ -1,7 +1,7 @@
 /*
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
-import {charts} from 'coCharts'
+import {ChartView} from 'coCharts'
 import {formatter, _c} from 'commons'
 
 const radialColorScheme6 = _c.radialColorScheme6
@@ -21,13 +21,8 @@ function getValue (serie) {
   return serie.value
 }
 
-const container = 'pools-pie'
-const layoutMeta = {
-  [container]: 'col-md-6'
-}
-
 const chartConfig = {
-  id: container,
+  id: 'chartBox',
   components: [{
     type: 'ControlPanel',
     config: {
@@ -70,11 +65,9 @@ const chartConfig = {
   ]
 }
 
-const chartView = new charts.RadialChartView()
+const chartView = new ChartView()
 
 export default {
-  container: container,
-  layoutMeta: layoutMeta,
   render: () => {
     chartView.setConfig(chartConfig)
     chartView.setData(pieData)

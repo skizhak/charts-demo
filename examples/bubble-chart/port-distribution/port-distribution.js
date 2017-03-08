@@ -1,7 +1,7 @@
 /*
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
-import {charts} from 'coCharts'
+import {ChartView} from 'coCharts'
 import {formatter, _c} from 'commons'
 import * as portDistribution from './port-distribution.json'
 
@@ -37,13 +37,8 @@ function dataProcesser (data) {
 
 let dataSrc = dataProcesser(portDistribution)
 
-const container = 'pd-bubble-chart'
-const layoutMeta = {
-  [container]: 'col-md-12'
-}
-
 const chartConfig = {
-  id: container,
+  id: 'chartBox',
   components: [
     {
       type: 'LegendPanel',
@@ -144,6 +139,7 @@ const chartConfig = {
         ]
       }
     }, {
+      id: 'navigation-id',
       type: 'Navigation',
       config: {
         marginInner: 10,
@@ -186,16 +182,15 @@ const chartConfig = {
             labelMargin: 15,
             ticks: 4,
           }
-        }
+        },
+        updateComponents: ['scatter-plot'],
       }
     }]
 }
 
-const chartView = new charts.XYChartView()
+const chartView = new ChartView()
 
 export default {
-  container: container,
-  layoutMeta: layoutMeta,
   render: () => {
     chartView.setConfig(chartConfig)
     chartView.setData(dataSrc)

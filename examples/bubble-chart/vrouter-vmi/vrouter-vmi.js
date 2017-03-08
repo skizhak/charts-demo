@@ -2,7 +2,7 @@
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
 import _ from 'lodash'
-import {charts} from 'coCharts'
+import {ChartView} from 'coCharts'
 import {formatter, _c} from 'commons'
 
 const bubbleShapes = _c.bubbleShapes
@@ -33,13 +33,8 @@ for (let i = 0; i < count; i++) {
   vmiData.push(data)
 }
 
-const container = 'vrouter-vmi-chart'
-const layoutMeta = {
-  [container]: 'col-md-12'
-}
-
 const chartConfig = {
-  id: container,
+  id: 'chartBox',
   components: [
     {
       type: 'LegendPanel',
@@ -175,16 +170,15 @@ const chartConfig = {
             labelMargin: 15,
             ticks: 4
           }
-        }
+        },
+        updateComponents: ['scatter-plot'],
       }
     }]
 }
 
-const chartView = new charts.XYChartView()
+const chartView = new ChartView()
 
 export default {
-  container: container,
-  layoutMeta: layoutMeta,
   render: () => {
     chartView.setConfig(chartConfig)
     chartView.setData(vmiData)

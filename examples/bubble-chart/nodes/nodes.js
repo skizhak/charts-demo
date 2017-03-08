@@ -2,7 +2,7 @@
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
 import _ from 'lodash'
-import {charts} from 'coCharts'
+import {ChartView} from 'coCharts'
 import {formatter, _c} from 'commons'
 
 const bubbleShapes = _c.bubbleShapes
@@ -35,13 +35,8 @@ for (var n in nodes) {
   }
 }
 
-const container = 'nodes-bubble-chart'
-const layoutMeta = {
-  [container]: 'col-md-12'
-}
-
 const chartConfig = {
-  id: container,
+  id: 'chartBox',
   components: [{
     type: 'LegendPanel',
     config: {
@@ -158,6 +153,7 @@ const chartConfig = {
           label: 'Memory',
         }
       },
+      updateComponents: ['navigation-id'],
     }
   }, {
     id: 'tooltip-id',
@@ -190,6 +186,7 @@ const chartConfig = {
       ]
     }
   }, {
+    id: 'navigation-id',
     type: 'Navigation',
     config: {
       marginInner: 10,
@@ -286,11 +283,9 @@ const chartConfig = {
   }]
 }
 
-const chartView = new charts.XYChartView()
+const chartView = new ChartView()
 
 export default {
-  container: container,
-  layoutMeta: layoutMeta,
   render: () => {
     chartView.setConfig(chartConfig)
     chartView.setData(nodeData)

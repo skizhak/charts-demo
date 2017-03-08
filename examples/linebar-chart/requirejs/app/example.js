@@ -7,11 +7,9 @@ define([ // eslint-disable-line no-undef
   'lodash',
   'contrail-charts',
 ], function (d3, _, coCharts) {
-  const container = ['requirejs-linebar-chart', 'requirejs-line-chart']
-  const layoutMeta = {
-    'requirejs-linebar-chart': 'col-xs-11 col-md-11',
-    'requirejs-line-chart': 'col-xs-11 col-md-11'
-  }
+  const template = _.template(
+    `<div component="chart-id1"></div>
+   <div component="chart-id2"></div>`)
 
   const data = []
   _.each(d3.range(100), (i) => {
@@ -36,8 +34,10 @@ define([ // eslint-disable-line no-undef
   ]
 
   const chartConfig = {
-    id: container[0],
+    id: 'chartBox',
+    template,
     components: [{
+      id: 'chart-id1',
       type: 'CompositeYChart',
       config: {
         marginInner: 10,
@@ -93,7 +93,6 @@ define([ // eslint-disable-line no-undef
           ]
         },
         axis: {
-          x: {},
           y1: {
             position: 'left',
             formatter: (value) => value.toFixed(0),
@@ -126,12 +125,8 @@ define([ // eslint-disable-line no-undef
           }
         ]
       }
-    }]
-  }
-
-  const lineChartConfig = {
-    id: container[1],
-    components: [{
+    }, {
+      id: 'chart-id2',
       type: 'CompositeYChart',
       config: {
         marginInner: 10,
@@ -147,9 +142,8 @@ define([ // eslint-disable-line no-undef
           y: [
             {
               enabled: true,
-              accessor: 'y',
+              accessor: 'e',
               chart: 'LineChart',
-              axis: 'y',
             }
           ]
         }
@@ -157,21 +151,15 @@ define([ // eslint-disable-line no-undef
     }]
   }
 
-  const chartView = new coCharts.charts.XYChartView()
-  const lineChartView = new coCharts.charts.XYChartView()
+  const chartView = new coCharts.ChartView()
 
   return {
-    container: container,
-    layoutMeta: layoutMeta,
     render: function () {
       chartView.setConfig(chartConfig)
-      lineChartView.setConfig(lineChartConfig)
       chartView.setData(data)
-      lineChartView.setData(lineData)
     },
     remove: () => {
       chartView.remove()
-      lineChartView.remove()
     }
   }
 })
