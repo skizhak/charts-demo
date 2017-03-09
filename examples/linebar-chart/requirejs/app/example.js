@@ -24,15 +24,6 @@ define([ // eslint-disable-line no-undef
     })
   })
 
-  // Most basic chart.
-  const lineData = [
-    { x: 1475760930000, y: 0 },
-    { x: 1475761930000, y: 3 },
-    { x: 1475762930000, y: 2 },
-    { x: 1475763930000, y: 4 },
-    { x: 1475764930000, y: 5 }
-  ]
-
   const chartConfig = {
     id: 'chartBox',
     template,

@@ -146,10 +146,9 @@ const chartConfig = {
         y2: {
           position: 'right',
           formatter: formatter.toInteger,
-          ticks: 5
-        }
+          ticks: 5,
+        },
       },
-      updateComponents: ['query-db-compositey'],
     },
   }, {
     id: 'default-tooltip',

@@ -236,7 +236,6 @@ const chartConfig = {
           ticks: 4,
         }
       },
-      updateComponents: ['inout-traffic-compositey'],
     }
   }, {
     id: 'default-tooltip',

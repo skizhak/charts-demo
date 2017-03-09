@@ -211,7 +211,6 @@ const chartConfig = {
           ticks: 4,
         }
       },
-      updateComponents: ['cpu-mem-compositey'],
     }
   }, {
     id: 'default-tooltip',
