@@ -19,16 +19,17 @@ function pieDataParser (data) {
 function trafficStatsParser (data) {
   let tsData = []
   if (data.length > 1) {
-    data = _.reduce(data, function (d1, d2) {
-      _.each(d2['flows'], (flow, index) => {
-        d1['flows'][index].inTraffic += flow.inTraffic
-        d1['flows'][index].outTraffic += flow.outTraffic
-        d1['flows'][index].inPacket += flow.inPacket
-        d1['flows'][index].outPacket += flow.outPacket
+    const sum = _.reduce(data, function (sum, vn) {
+      _.each(vn['flows'], (flow, index) => {
+        _.set(sum, `flows.${index}.inTraffic`, (_.get(sum, `flows.${index}.inTraffic`) || 0) + flow.inTraffic)
+        _.set(sum, `flows.${index}.outTraffic`, (_.get(sum, `flows.${index}.outTraffic`) || 0) + flow.outTraffic)
+        _.set(sum, `flows.${index}.inPacket`, (_.get(sum, `flows.${index}.inPacket`) || 0) + flow.inPacket)
+        _.set(sum, `flows.${index}.outPacket`, (_.get(sum, `flows.${index}.outPacket`) || 0) + flow.outPacket)
+        _.set(sum, `flows.${index}.time`, flow.time)
       })
-      return d1
-    })
-    tsData = data['flows']
+      return sum
+    }, {})
+    tsData = sum['flows']
   } else {
     tsData = data[0]['flows']
   }
