@@ -1,12 +1,12 @@
 /*
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
-import {ChartView} from 'coCharts'
+import {ChartView, Util} from 'coCharts'
 import {formatter, _c} from 'commons'
 import * as portDistribution from './port-distribution.json'
 
 const colorScheme = _c.d3ColorScheme10
-const bubbleShapes = _c.bubbleShapes
+const bubbleShapes = Util.bubbleShapes
 
 function dataProcesser (data) {
   const portTraffic = [...data.sport, ...data.dport]

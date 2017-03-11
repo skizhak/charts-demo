@@ -2,12 +2,12 @@
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
 import _ from 'lodash'
-import {charts} from 'coCharts'
+import {ChartView, Util} from 'coCharts'
 import {_c, formatter, dg} from 'commons'
 
 const data = dg.projectVNTraffic({vnCount: 4, flowCount: 50})
 const colorScheme = _c.d3ColorScheme20
-const bubbleShapes = _c.bubbleShapes
+const bubbleShapes = Util.bubbleShapes
 
 function pieDataParser (data) {
   _.each(data, (vn) => {

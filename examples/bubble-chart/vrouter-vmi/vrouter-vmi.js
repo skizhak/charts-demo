@@ -2,10 +2,10 @@
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
 import _ from 'lodash'
-import {ChartView} from 'coCharts'
+import {ChartView, Util} from 'coCharts'
 import {formatter, _c} from 'commons'
 
-const bubbleShapes = _c.bubbleShapes
+const bubbleShapes = Util.bubbleShapes
 const colorScheme = _c.bubbleColorScheme6
 
 const vmiData = []

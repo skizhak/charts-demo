@@ -2,7 +2,7 @@
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
 import _ from 'lodash'
-import {charts} from 'coCharts'
+import {ChartView, Util} from 'coCharts'
 const commons = require('commons')
 
 const formatter = commons.formatter
@@ -14,7 +14,7 @@ let data = commons.dg.computeNodeData({vrCount: 1, count: 20, flowCount: 60, tim
 
 const colorScheme = _c.lbColorScheme17
 const bubbleColorScheme = _c.bubbleColorScheme6
-const bubbleShapes = _c.bubbleShapes
+const bubbleShapes = Util.bubbleShapes
 
 function pieDataParser (data) {
   return data[0]['diskUsage']
