@@ -139,7 +139,7 @@ const allExamples = {
       view: diskUsageChart,
       info: {
         title: 'OSD status of Ceph cluster',
-        desc: 'Donut chart is used to show OSD states under a Ceph cluster.'
+        desc: 'OSD states under a Ceph cluster are shown via two independent donut charts.'
       }
     },
     'Storage Pools': {

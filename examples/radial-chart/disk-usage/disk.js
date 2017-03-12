@@ -3,16 +3,17 @@
  */
 import {ChartView} from 'coCharts'
 import {formatter, _c} from 'commons'
+import template from './template.html'
 
 const radialColorScheme6 = _c.radialColorScheme6
 
 const osdStatusData = [
   {label: 'Disks Up', value: 59},
-  {label: 'Disks Down', value: 4}
+  {label: 'Disks Down', value: 4},
 ]
 const osdClusterData = [
   {label: 'Disks In', value: 55},
-  {label: 'Disks Out', value: 6}
+  {label: 'Disks Out', value: 6},
 ]
 
 function getLabel (serie) {
@@ -22,15 +23,8 @@ function getValue (serie) {
   return serie.value
 }
 
-const container = ['disk-status-chart', 'disk-cluster-chart']
-const layoutMeta = {
-  [container[0]]: 'render-order-1 col-md-6',
-  [container[1]]: 'render-order-2 col-md-6'
-}
-
 const diskStatusConfig = {
-  id: container[0],
-  type: 'RadialChart',
+  id: 'disk-status-chart',
   components: [{
     type: 'ControlPanel',
     config: {
@@ -71,9 +65,9 @@ const diskStatusConfig = {
     },
   }]
 }
+
 const diskClusterConfig = {
-  id: container[1],
-  type: 'RadialChart',
+  id: 'disk-cluster-chart',
   components: [{
     type: 'ControlPanel',
     config: {
@@ -119,9 +113,8 @@ const diskStatusChart = new ChartView()
 const diskClusterChart = new ChartView()
 
 export default {
-  container: container,
-  layoutMeta: layoutMeta,
   render: () => {
+    $('#chartBox').html(template())
     diskStatusChart.setConfig(diskStatusConfig)
     diskClusterChart.setConfig(diskClusterConfig)
 
