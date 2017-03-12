@@ -19,13 +19,7 @@ import poolUsageChart from '../../radial-chart/pool-usage/pools.js'
 import vnDetailChart from '../../grouped-chart/vn-detail/vn-detail.js'
 import computeNodeChart from '../../grouped-chart/compute-node/cnode.js'
 
-import groupedChartTemplate from '../template/multiple.tmpl'
-import exampleDescTemplate from '../template/exampleDesc.tmpl'
-
-const templates = {
-  grouped: groupedChartTemplate
-}
-
+import exampleDescTemplate from '../template/exampleDesc.html'
 /**
  * structure of an example:
  * 'example title': {
