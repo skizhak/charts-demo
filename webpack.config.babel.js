@@ -54,7 +54,7 @@ export default (env = defaultEnv) => {
     },
     devtool: 'source-map',
     output: {
-      path: absolute('/dist'),
+      path: absolute('/build'),
       filename: '[name].bundle.js'
     },
     module: {loaders},
@@ -78,7 +78,7 @@ export default (env = defaultEnv) => {
     plugins: plugins,
     stats: { children: false },
     devServer: {
-      publicPath: '/dist/',
+      publicPath: '/build/',
       compress: true,
       port: 9001
     }

@@ -72,7 +72,7 @@ const allExamples = {
       info: {
         title: 'CPU & Memory of Contrail Nodes',
         desc: `Bubble chart with navigation is used to analyze CPU and Memory of different nodes. Each node is
-         identified by it\'s temporary icon. Users can filter the nodes by CPU Share through navigation chart at bottom.`
+         identified by it's temporary icon. Users can filter the nodes by CPU Share through navigation chart at bottom.`
       }
     },
     'Port Distribution': {
@@ -187,7 +187,7 @@ function _viewRenderInit ({view, info = {title: '', desc: ''}}) {
   if (!_.isNil(info)) {
     $exampleDesc.append(exampleDescTemplate({
       title: info.title,
-      desc: info.desc
+      desc: info.desc,
     }))
   }
   view.render()
