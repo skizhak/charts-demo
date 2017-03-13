@@ -99,7 +99,6 @@ const allExamples = {
       }
     },
     'Compute Node': {
-      template: 'grouped',
       view: computeNodeChart,
       info: {
         title: 'Compute Node',
