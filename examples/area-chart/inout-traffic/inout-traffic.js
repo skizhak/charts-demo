@@ -2,7 +2,7 @@
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
 import _ from 'lodash'
-import {charts} from 'coCharts'
+import {ChartView} from 'coCharts'
 import {formatter, _c} from 'commons'
 
 const timeInterval = 2000
@@ -152,13 +152,8 @@ const tooltipDataConfig = _.reduce(dataProcessed.nodeIds, (config, nodeId) => {
   valueFormatter: formatter.extendedISOTime,
 }])
 
-const container = 'inout-traffic'
-const layoutMeta = {
-  [container]: 'col-md-11'
-}
-
 const chartConfig = {
-  id: container,
+  id: 'chartBox',
   components: [{
     id: 'control-panel-id',
     type: 'ControlPanel',
@@ -240,7 +235,7 @@ const chartConfig = {
           labelMargin: 15,
           ticks: 4,
         }
-      }
+      },
     }
   }, {
     id: 'default-tooltip',
@@ -266,11 +261,9 @@ const chartConfig = {
 
 let intervalId = -1
 // Create chart view.
-const trafficView = new charts.XYChartView()
+const trafficView = new ChartView()
 
 export default {
-  container: container,
-  layoutMeta: layoutMeta,
   render: () => {
     trafficView.setConfig(chartConfig)
     trafficView.setData(dataProcessed.data)

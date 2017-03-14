@@ -1,7 +1,7 @@
 /*
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
-import {charts} from 'coCharts'
+import {ChartView} from 'coCharts'
 import {_c, dg} from 'commons'
 
 const dendrogamData = {
@@ -13,7 +13,7 @@ const layoutMeta = {
 }
 
 const chartConfig = {
-  id: container,
+  id: 'chartBox',
   components: [{
     type: 'LegendPanel',
     config: {
@@ -83,7 +83,7 @@ const chartConfig = {
 }
 
 // Create chart view.
-const chartView = new charts.RadialChartView()
+const chartView = new ChartView()
 
 export default {
   container: container,

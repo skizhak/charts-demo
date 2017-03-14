@@ -2,7 +2,7 @@
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
 import _ from 'lodash'
-import {charts} from 'coCharts'
+import {ChartView} from 'coCharts'
 import {formatter, _c} from 'commons'
 import dataSrc from './cpu-mem.json'
 
@@ -122,13 +122,8 @@ const tooltipDataConfig = _.reduce(dataProcessed.nodeIds, (config, nodeId) => {
   valueFormatter: formatter.extendedISOTime,
 }])
 
-const container = 'cpu-mem-chart'
-const layoutMeta = {
-  [container]: 'col-md-11'
-}
-
 const chartConfig = {
-  id: container,
+  id: 'chartBox',
   components: [{
     type: 'LegendPanel',
     config: {
@@ -215,7 +210,7 @@ const chartConfig = {
           labelMargin: 15,
           ticks: 4,
         }
-      }
+      },
     }
   }, {
     id: 'default-tooltip',
@@ -241,11 +236,9 @@ const chartConfig = {
 }
 
 // Create chart view.
-const cpuMemChartView = new charts.XYChartView()
+const cpuMemChartView = new ChartView()
 
 export default {
-  container: container,
-  layoutMeta: layoutMeta,
   render: () => {
     cpuMemChartView.setConfig(chartConfig)
     cpuMemChartView.setData(dataProcessed.data)

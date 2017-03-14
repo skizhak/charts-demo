@@ -2,7 +2,7 @@
  * Copyright (c) Juniper Networks, Inc. All rights reserved.
  */
 import _ from 'lodash'
-import {charts} from 'coCharts'
+import {ChartView} from 'coCharts'
 import {formatter, _c} from 'commons'
 
 function getDataPoint (x) {
@@ -22,13 +22,8 @@ for (let i = 1; i <= 100; i++) {
   data.push(getDataPoint(now - ((100 - i) * 1000)))
 }
 
-const container = 'query-db-chart'
-const layoutMeta = {
-  [container]: 'col-md-11'
-}
-
 const chartConfig = {
-  id: container,
+  id: 'chartBox',
   components: [{
     id: 'control-panel-id',
     type: 'ControlPanel',
@@ -151,9 +146,9 @@ const chartConfig = {
         y2: {
           position: 'right',
           formatter: formatter.toInteger,
-          ticks: 5
-        }
-      }
+          ticks: 5,
+        },
+      },
     },
   }, {
     id: 'default-tooltip',
@@ -202,11 +197,9 @@ const chartConfig = {
 }
 
 let intervalId = -1
-const queryChart = new charts.XYChartView()
+const queryChart = new ChartView()
 
 export default {
-  container: container,
-  layoutMeta: layoutMeta,
   render: () => {
     queryChart.setConfig(chartConfig)
     queryChart.setData(data)
