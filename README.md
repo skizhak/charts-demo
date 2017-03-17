@@ -17,7 +17,7 @@ Node version > 6
 
 `npm start`
 
-This will build and load the examples on browser at [http://localhost:9001]()
+This will build and load the examples on browser at [http://localhost:9001](http://localhost:9001)
 
 For dev environment, use
 
