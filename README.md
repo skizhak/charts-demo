@@ -1,6 +1,6 @@
 ## Contrail Charts Demo
 
-This project contains examples of charts for contrail controller using [contrail-charts]() library. 
+This project contains examples of charts for contrail controller using [contrail-charts](https://github.com/Juniper/contrail-charts) library. 
 
 ### Getting Started
 
@@ -63,8 +63,6 @@ Real-time area chart is used to compare the in/out traffic of multiple VNs. Quad
 * [Zheyang Song](https://github.com/ZheyangSong)
 * [Abhishek Singla](https://github.com/absingla)
 
-
-
 ### License
 
-This project is licensed under Apache Version 2.0 - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under Apache Version 2.0 - see the [LICENSE](LICENSE) file for details
