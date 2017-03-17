@@ -25,19 +25,19 @@ For dev environment, use
 
 ### Examples
 
-####Traffic Analysis for a Project
+#### Traffic Analysis for a Project
 
 A combination of three charts used to analyze traffic across VNs under a project. LineBar chart shows either total traffic of this project or traffic of VN selected by clicking on Pie chart. Bubble chart shows traffic across ports with two icons: one for in-traffic and other one for out-traffic.
 
 ![Project VN Traffic](images/project-vn-traffic.png)
 
-####CPU & Memory of Contrail Nodes
+#### CPU & Memory of Contrail Nodes
 
 Bubble chart with navigation is used to analyze CPU and Memory of different nodes. Each node is identified by it's temporary icon. Users can filter the nodes by CPU Share through navigation chart at bottom.
 
 ![Contrail Nodes](images/contrail-nodes.png)
 
-####QE Queries on Analytics Node
+#### QE Queries on Analytics Node
 
 Real-time Line vs Stacked Bar chart is used to compare queries and r/w requests to cassandra
 
@@ -49,7 +49,7 @@ A radial dendrogram used to show vRouter traffic between source and destination 
 
 ![vRouter Traffic](images/vrouter-traffic.png)
 
-####Traffic in/out of VNs
+#### Traffic in/out of VNs
 
 Real-time area chart is used to compare the in/out traffic of multiple VNs. Quadrant I displays traffic in and quadrant IV displays traffic out.
 
