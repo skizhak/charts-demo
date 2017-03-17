@@ -61,7 +61,6 @@ const trafficPlotConfig = {
       chart: 'BarChart',
       color: colorScheme[0],
       axis: 'y1',
-      tooltip: 'xy-tooltip-id',
     }, {
       accessor: 'outTraffic',
       label: 'Traffic Out',
@@ -69,7 +68,6 @@ const trafficPlotConfig = {
       chart: 'BarChart',
       color: colorScheme[2],
       axis: 'y1',
-      tooltip: 'xy-tooltip-id',
     }, {
       accessor: 'inPacket',
       label: 'Packets In',
@@ -77,7 +75,6 @@ const trafficPlotConfig = {
       chart: 'LineChart',
       color: colorScheme[1],
       axis: 'y2',
-      tooltip: 'xy-tooltip-id',
     }, {
       accessor: 'outPacket',
       label: 'Packets Out',
@@ -85,7 +82,6 @@ const trafficPlotConfig = {
       chart: 'LineChart',
       color: colorScheme[3],
       axis: 'y2',
-      tooltip: 'xy-tooltip-id',
     }
   ]
 }

@@ -87,10 +87,10 @@ const diskClusterConfig = {
         getLabel: getLabel,
         valueFormatter: formatter.commaGroupedInteger,
       },
-      tooltip: 'tooltip-id',
+      tooltip: 'tooltip-id2',
     }
   }, {
-    id: 'tooltip-id',
+    id: 'tooltip-id2',
     type: 'Tooltip',
     config: {
       dataConfig: [
