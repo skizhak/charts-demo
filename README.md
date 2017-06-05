@@ -1,3 +1,5 @@
+#### This is initial POC done for now released contrail-charts demo [contrail-charts-demo](https://github.com/juniper/contrail-charts-demo)
+
 ## Contrail Charts Demo
 
 This project contains examples of charts for contrail controller using [contrail-charts](https://github.com/Juniper/contrail-charts) library. 
